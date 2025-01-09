@@ -1,1 +1,6 @@
-This is public data
+git init
+git status
+git remote add origin {LINK}
+git branch -M main
+git commit -m {MESSAGE}
+git push -u origin main
