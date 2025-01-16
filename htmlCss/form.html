@@ -5,25 +5,35 @@
   </head>
   <body>
     <!-- input, radio, checkbox, textarea, select, button, label -->
-    <form>
+    <!-- required, autofocus, autocomplete, novalidate -->
+
+    <!-- method: get :: tells the browser to send data via URL -->
+    <!-- method: post :: tells the browser to send data via HTTP POST method -->
+
+    <form method="post" action="index.html">
       <div>
-        <label for="name">Name</label>
+        <label for="name">Name *</label>
         <input
           id="name"
           type="text"
-          name="firstname"
+          name="name"
           placeholder="Enter you name"
+          required
+          autofocus
+          autocomplete="on"
         />
       </div>
 
       <div>
-        <label for="pass">Password</label>
+        <label for="pass">Password *</label>
         <input
           id="pass"
           type="password"
           name="password"
           placeholder="Enter your password"
+          required
         />
+        <span>SHOW</span>
       </div>
       <div>
         <label for="email">Email</label>
@@ -37,10 +47,95 @@
 
       <div>
         <label>Gender</label>
-        <input type="radio" name="gen" />Male
-        <input type="radio" name="gen" />Female
-        <input type="radio" name="gen" />Other
+        <input type="radio" name="gen" value="male" />Male
+        <input type="radio" name="gen" value="female" />Female
+        <input type="radio" name="gen" value="other" />Other
       </div>
+
+      <div>
+        <label for="">Hobbies</label>
+        <input type="checkbox" value="read" />Reading
+        <input type="checkbox" value="sleep" />Sleeping
+        <input type="checkbox" value="dance" />Dancing
+        <input type="checkbox" value="game" />Gaming
+        <input type="checkbox" value="eat" />Eating
+        <input type="checkbox" value="reels" />Watching Reels
+      </div>
+
+      <div>
+        <!-- multiple -->
+        <label for="qual">Qualification</label>
+        <select name="qual" id="qual">
+          <option value="" disabled selected>
+            Select Highest Qualification
+          </option>
+          <option value="xii">XII</option>
+          <option value="grad">Graduate</option>
+          <option value="pg">Post Graduate</option>
+          <option value="phd">Doctorate</option>
+        </select>
+      </div>
+
+      <!-- <div>
+        <label for="datalist">Qualification</label>
+        <input type="text" placeholder="Enter Highest Qualification" list="datalist" />
+        <datalist id="datalist">
+          <option value="xii">XII</option>
+          <option value="grad">Graduate</option>
+          <option value="pg">Post Graduate</option>
+          <option value="phd">Doctorate</option>
+        </datalist>
+      </div> -->
+
+      <div>
+        <label for="address">Address</label>
+        <textarea
+          name="address"
+          id="address"
+          placeholder="Address"
+          cols="15"
+          rows="5"
+          style="resize: none"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="">Color</label>
+        <input type="color" />
+      </div>
+
+      <div>
+        <label for="">Age</label>
+        <input
+          type="number"
+          placeholder="Enter your age"
+          min="1"
+          max="100"
+          step="2"
+        />
+      </div>
+
+      <div>
+        <label for="">Price Range</label>
+        <input type="range" min="1000" max="100000" step="1000" />
+      </div>
+
+      <div>
+        <label for="">DOB</label>
+        <input type="date" />
+      </div>
+
+      <div>
+        <label for="">Resume</label>
+        <input type="file" />
+      </div>
+
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
     </form>
+
+    <!-- INSIDE FORM WE DO NOT USE EITHER
+    <input type="button" value="" />
+    <button type="button"></button> -->
   </body>
 </html>
