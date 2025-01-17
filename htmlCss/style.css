@@ -1,0 +1,45 @@
+/* p {
+  color: red;
+} */
+
+/* id are denoted by #
+class are denoted by . */
+
+/* #green {
+  color: green;
+}
+
+.greenColor {
+  color: green;
+}
+
+.big {
+  font-size: 40px;
+} */
+
+/* id > class > tag */
+/* inline > internal > external */
+/* last comes first */
+
+/* #green {
+  color: green;
+}
+.blue {
+  color: blue;
+} */
+
+/* h2 {
+  color: red;
+}
+h2 span {
+  color: green;
+} */
+
+/* #ocean {
+  color: purple;
+} */
+
+
+.para3{
+    color: blueviolet;
+}
