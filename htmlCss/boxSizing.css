@@ -1,0 +1,23 @@
+/* Box model states:
+ - everything in css is a box, irrespective of how it is shown on the browser.
+ - the area occupied by the box on screen is a combination of its width/height + padding + border + margin. 
+ 
+ - box-sizing: content-box: is the default behaviour
+ - box-sizing: border-box: instructs the browser to include padding, border inside the width/height only... */
+
+/* area occupied by the box on screen is (width/height + padding + border) + margin */
+
+/* Most block type elements carry their default margins and / or padding */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 300px;
+  border: 2px solid red;
+  padding: 10px;
+  margin: 20px;
+}

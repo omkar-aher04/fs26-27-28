@@ -1,0 +1,95 @@
+/* Pseudo classes: classes that will not exist in HTML, still we will use them in CSS
+
+first-child, last-child, first-of-type, last-of-type, nth-child, nth-of-type
+
+
+Pseudo elements: elements that will not exist in HTML, still we will use them in CSS 
+
+
+before, after, first-line, first-letter, placeholder, selection
+
+
+*/
+
+/* li {
+  color: purple;
+} */
+
+/* div > ul + li {
+  color: purple;
+} */
+
+/* li:first-child {
+  color: purple;
+}
+li:last-child {
+  color: red;
+} */
+
+/* li:first-of-type {
+  color: purple;
+}
+li:last-of-type {
+  color: red;
+} */
+
+/* li:nth-child(2) {
+  color: pink;
+} */
+
+/* li:nth-of-type(6) {
+  color: pink;
+} */
+
+/* EVEN */
+/* .wrapper:first-child ul:nth-child(2) li:nth-of-type(2n) {
+  color: red;
+  font-size: 20px;
+} */
+
+/* ODD */
+/* .wrapper:first-child ul:nth-child(2) li:nth-of-type(2n + 1) {
+  color: blue;
+  font-size: 18px;
+} */
+
+/* li:nth-of-type(even) {
+  color: red;
+}
+li:nth-of-type(odd) {
+  color: blue;
+} */
+
+/* p::first-letter {
+  font-size: 40px;
+}
+
+p:nth-of-type(2)::first-line {
+  color: red;
+} */
+
+/* in pseudo elements, before & after, the property content is mandatory */
+
+/* li::before {
+  content: "This is an ";
+}
+li::after {
+  content: " .";
+} */
+
+/* input {
+  color: red;
+  font-size: 40px;
+  font-style: italic;
+}
+input::placeholder{
+    color: purple;
+    font-size: 10px;
+} */
+
+/* ::selection {
+  background-color: blueviolet;
+  color: white;
+} */
+
+/* #id::selection */
