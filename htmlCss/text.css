@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* text-decoration
+-->text-align
+-->text-transform: uppercase | lowercase | capitalize
+-->line-height
+-->font-family
+-->font-size
+-->font-style
+-->font-weight */
+
+/* vertical-align */
+
+/* p {
+  text-decoration: none | underline | overline | line-through;
+} */
+
+/* a{
+    text-decoration: underline | none | overline | line-through  ;
+} */
+/* font-style: italic; */
+
+/* fallback */
+
+p {
+  text-align: justify;
+  text-transform: capitalize;
+  line-height: 25px;
+  font-size: 32px;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: Ubuntu, Arial;
+}
