@@ -1,0 +1,39 @@
+/* WE USE POSITION WHEN WE WANT AN ELEMENT AT OUR PLACE OF CHOOSING */
+
+/* static, fixed, relative, absolute, sticky */
+
+/* With position, comes 4 new properties:
+ - top, bottom, left & right */
+
+/* position:fixed :: fixes the element on the webpage. Element does not scroll. Counting starts from page boundaries. Element is invisible to other elements. */
+
+/* position: relative :: element is not fixed. Counting starts from relative to original position. Element is visible to other elements. */
+
+/* position: absolute :: element is not fixed. Counting starts from:
+ - first positioned parent element,
+ - or page boundaries
+ Element is invisible to other elements.
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  border: 1px solid;
+  position: fixed;
+}
+
+#parent {
+  border: 3px solid;
+  padding: 3rem;
+  position: relative;
+}
+#child {
+  border: 1px dotted;
+  padding: 1rem;
+  position: absolute;
+
+}
