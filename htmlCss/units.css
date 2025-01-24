@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* h1 span {
+  background-color: blue;
+  color: white;
+} */
+
+/* 
+Absolute Units: that are exactly the same in all kinds of devices. example: px
+
+Relative Units: that are related to the device type/size.
+    example: em, rem, %, vh, vw
+*/
+
+/* 16px = 1em = 1rem = 100% */
+
+/* em: checks the property on the parent element & works accordingly
+
+rem: checks the property on the root element(html) & works accordingly. It doesn't concern with the parent element */
+
+/* html {
+  font-size: 20px;
+}
+
+section {
+  font-size: 3.5em;
+}
+p {
+  font-size: 3.5rem;
+} */
+
+.box {
+  border: 2px solid;
+  width: 50vw;
+  padding: 10px;
+}
+.box img {
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+/* border-style: solid | dashed | dotted | inset | outset | groove | ridge */
+
+.box {
+  /* border-width: 1px;
+  border-style: solid;
+  border-color: black; */
+  /* color: green;
+  
+  border: 3px solid; */
+
+  /* border-top: 3px solid green;
+  border-left: 3px solid purple;
+  border-right: 3px solid purple;
+  border-bottom: 2px solid red; */
+}
+
+/* 
+MARGIN: space between 2 elements / space between border of 2 elements
+PADDING: space between an element's content & its border 
+*/
+
+#b2 {
+  /* margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px; */
+
+  /* margin: 10px 20px 20px 20px;
+  padding: 40px 20px 20px 20px; */
+
+  margin: 5px 6px 10px; /* top left+right bottom */
+  margin: 5px 10px; /* top+bottom right+left */
+  margin: 5px; /* top+bottom+right+left */
+}

@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* p{
+    color: #f00;
+} */
+
+/* Hexadecimal values:
+ - starts with a #
+ - followed by either 3 or 6 characters 
+ - allowed chars: 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+ */
+
+/* 
+ Red: #ff0000 = #f00
+ Green: #00ff00 = #0f0
+ Blue: #0000ff = #00f
+ Black: #000000 = #000
+ White: #ffffff = #fff
+ 
+ */
+
+/* # 00 00 ff = #00f */
+
+/* #113355 = #135 */
+
+/* #123456 */
+
+/* RGB values:
+- starts with the word rgb()
+ - allowed chars: 0,1,2,3,4,5,6,7,8,9,....255 */
+
+/* Red: rgb(255,0,0)
+ Green: rgb(0,255,0)
+ Blue: rgb(0,0,255)
+ Black: rgb(0,0,0)
+ White: rgb(255,255,255) */
+
+/* The alpha(opacity): ranges from 0 to 1. With 1 being the default value */
+
+p {
+  /* color: #2a2aae; */
+
+  /* color: rgb(0, 0, 0); */
+  /* color: rgba(0, 0, 0, 0); */
+}

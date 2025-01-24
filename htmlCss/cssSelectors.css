@@ -1,0 +1,60 @@
+
+/* li {
+  color: red;
+} */
+
+/* ul li {
+  color: red;
+} */
+
+/* .red {
+  color: red;
+} */
+
+/* .redColor li {
+  color: red;
+} */
+
+/* #redColor li,
+h2 {
+  color: red;
+} */
+
+/* body #redColor li {
+  color: pink;
+} */
+
+/* Descendant combinator (space)
+Child combinator (>)
+*/
+
+/* .top h1 {
+  font-size: 50px;
+}
+
+.top > h1 {
+  color: purple;
+} */
+
+/* .top > ul > h1 {
+  border: 1px solid;
+} */
+
+/* .top > section h1 {
+  border: 1px solid;
+} */
+
+/* .top ul h1 {
+  border: 1px solid;
+} */
+
+/* Next sibling combinator (+)
+Subsequent-sibling combinator (~) */
+
+/* h1 + p {
+  color: red;
+}
+
+h1 ~ p {
+  color: purple;
+} */
