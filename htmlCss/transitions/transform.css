@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#box {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+  background-image: url(../assets/samay.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -72px 0;
+  /* transform: rotate(); */
+  transform: skew();
+}
+
+/* 
+translate: to move an element.
+scale: zoom in / zoom out of an element. Uses numbers as arguments
+rotate: to rotate an element on its axis. Uses degrees as arguments (45deg)
+skew 
+*/
+
+/* 2D transform & 3D transform */
+
+/* translate, scale, skew, rotate
+
+translateX, translateY */
+
+/* transform-origin */
