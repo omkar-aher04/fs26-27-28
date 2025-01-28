@@ -6,11 +6,11 @@
 3. GITHUB PAGES / VERCEL
 4. HTML
 5. CSS:
-    a. Class ID
-    b. Specificity
-    b. Background
-    d. Text
-    e. Margin & Padding
-    f. Position
-    g. Flex
-    h. Grid
+  *. Class ID
+  *. Specificity
+  *. Background
+  *. Text
+  *. Margin & Padding
+  *. Position
+  *. Flex
+  *. Grid
