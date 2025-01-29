@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#face {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  position: relative;
+  animation: faceroll 5s linear;
+}
+#face div {
+  position: absolute;
+  border-radius: 50%;
+}
+.leyebrow,
+.reyebrow {
+  width: 20px;
+  height: 10px;
+  border-top: 2px solid;
+  top: 40px;
+}
+.leyebrow {
+  left: 50px;
+}
+.reyebrow {
+  left: 130px;
+}
+.leye,
+.reye {
+  width: 20px;
+  height: 40px;
+  border: 2px solid;
+  top: 60px;
+}
+.leye {
+  left: 50px;
+}
+.reye {
+  left: 130px;
+}
+.smile {
+  width: 80px;
+  height: 40px;
+  border-bottom: 2px solid;
+  top: 110px;
+  left: 60px;
+}
+
+@keyframes faceroll {
+  0% {
+    left: 0;
+
+    transform: rotate(0);
+  }
+  50% {
+    /* left: 100%; */
+    left: calc(100% - 200px);
+    transform: rotate(360deg);
+  }
+  100% {
+    left: 0;
+    transform: rotate(0);
+  }
+}
