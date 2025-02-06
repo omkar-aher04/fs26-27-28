@@ -46,8 +46,43 @@
 // console.log(x++); //0
 // console.log(++x); //2
 
-let a = 10;
-let b = a++;
-let c = ++b;
-let d = a + b + c;
-console.log(d--);
+// let a = 10;
+// let b = a++;
+// let c = ++b;
+// let d = a + b + c;
+// console.log(d--);
+
+//QUESTIONS
+
+// let a = 0; //1
+// let b = a++ + 1; //1
+// let c = a + b; //2
+// let d = a + b + c; //4
+// console.log(d - 2); //2
+
+//   const a = 10 > 5; //true
+//   const b = 10 < 5; // false
+//   console.log(a + b); //??? 1
+
+// let x = 101; //102
+// let y = x++ + 1; //102
+// let z = ++x + ++y; //206
+// let a = x + y + z;
+// console.log(a); //412 410
+
+//a++ means a = a + 1
+//++a means a = a + 1
+
+// let a = 52; //54
+// let b = ++a + 10; //64
+// let c = ++a - b++ + 10; //54 - 63 + 10 = 1
+// let d = a + b + c - 10;
+// console.log(d + 10); //119
+
+// let x = 0;
+// console.log(x++); //0
+// console.log(--x); //0
+// console.log(++x + 2); //3
+// let y = ++x - 1;
+// console.log(y++ - 1); //0
+// console.log(y); //2
