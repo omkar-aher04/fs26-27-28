@@ -50,10 +50,10 @@
 // let arr = [1, 2, 3, 4, 5];
 // arr.push(6);
 // arr.unshift(0);
-// arr.pop(); //0,1,2,3,4,5
-// let result = arr.shift() + arr.splice(2, 2)[0]; //0 + 3 = 3
-// console.log(result); //3
-// console.log(arr); //[1,2,5]
+// arr.pop(); 
+// let result = arr.shift() + arr.splice(2, 2)[0]; 
+// console.log(result); 
+// console.log(arr); 
 
 
 // let fruits = ["apple", "banana", "cherry"];

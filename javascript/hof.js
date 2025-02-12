@@ -1,6 +1,5 @@
 // ASSIGNMENT: reduce, filter, some, every, find, findIndex
 
-
 // For any function to be a Higher Order Function(HOF), it must fulfill, atleast first two, of the following conditions:
 // it should work on an array
 // it should take a function as its first argument
@@ -40,4 +39,14 @@
 //   return num * num;
 // }
 
-const numbers = [12, 13, 51, 50, 55, 48];
+// const numbers = [1, 0, 4, 6, 8, 9];
+
+// const blank = [];
+
+// const sum = numbers.reduce(reducer);
+
+// function reducer(previous, current) {
+//   return previous / current;
+// }
+
+// console.log(sum);

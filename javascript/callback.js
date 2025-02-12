@@ -4,9 +4,7 @@ function f1(n1, n2, valueToAdd, func) {
   }
   return n1;
 }
-
 function f2(a, b) {
   return a + b;
 }
-
 console.log(f1(5, 3, 1, f2));
