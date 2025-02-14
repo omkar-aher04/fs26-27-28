@@ -133,8 +133,8 @@ noBreak["usp"] = "interesting";
 
 console.log(noBreak);
 
-// In seal, you can modify a new pair, but cannot add.
-// In freeze, you can neither add or modify a key value pair
+// In seal, you can only modify a pair, but cannot add a new pair.
+// In freeze, you can neither add or modify a key value pair.
 
 //ASSIGNMENT: Object.hasOwn, Object.hasOwnProperty, Object.assign
 
