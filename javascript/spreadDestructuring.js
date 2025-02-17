@@ -112,7 +112,12 @@
 // const merged = {...obj1, ...obj2}; // {a:1, b:3, c:4}
 // console.log(Object.values(merged).reduce((sum, val) => sum + val, 0));
 
-// const obj = {a: 1, b: 2, c: 3};
+const obj = {a: 1, b: 2, c: 3}; 
+// [["a", 1], ["b", 2], ["c", 3]]
+
+// for(let x of arr)
+
+
 // for (let [key, value] of Object.entries(obj)) {
 //     if (value % 2 === 0) {
 //         delete obj[key];
@@ -120,12 +125,12 @@
 // }
 // console.log(Object.keys(obj).length);
 
-const person = { name: "Vikas", girlfriend: null };
+// const person = { name: "Vikas", girlfriend: null };
 
-for (let i in person) {
-  console.log(i + ":" + person[i]);
-}
+// for (let i in person) {
+//   console.log(i + ":" + person[i]);
+// }
 
-for (let i of person) {
-  console.log(i + ":" + person[i]);
-}
+// for (let i of person) {
+//   console.log(i + ":" + person[i]);
+// }

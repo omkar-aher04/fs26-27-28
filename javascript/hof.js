@@ -39,14 +39,16 @@
 //   return num * num;
 // }
 
-// const numbers = [1, 0, 4, 6, 8, 9];
+const numbers = [1, 0, 4, 6, 8, 9];
 
-// const blank = [];
+const blank = [];
 
-// const sum = numbers.reduce(reducer);
+const sum = numbers.reduce(reducer);
 
-// function reducer(previous, current) {
-//   return previous / current;
-// }
+function reducer(previous, current) {
+  return previous + current;
+}
 
 // console.log(sum);
+
+document.write(sum);

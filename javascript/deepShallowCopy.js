@@ -22,17 +22,17 @@
 
 // console.log(p1);
 
-const p1 = {
-  name: "Ayush Sir",
-  city: "Prayagraj",
-  work: {
-    city: "Bangaluru",
-    state: "Karnataka",
-  },
-};
+// const p1 = {
+//   name: "Ayush Sir",
+//   city: "Prayagraj",
+//   work: {
+//     city: "Bangaluru",
+//     state: "Karnataka",
+//   },
+// };
 
-const p2 = p1; //SHALLOW
-const p3 = { ...p1 }; //DEEP
+// const p2 = p1; //SHALLOW
+// const p3 = { ...p1 }; //DEEP
 
 //CHANGING THE NON NESTED PROPERTIES
 // p1.city = "Lucknow";
@@ -41,9 +41,9 @@ const p3 = { ...p1 }; //DEEP
 // console.log(p3.city); //Prayagraj
 
 //CHANGING THE NESTED PROPERTIES
-p1.work.city = "Pune";
-console.log(p2.work.city); //P B
-console.log(p3.work.city); //B P
+// p1.work.city = "Pune";
+// console.log(p2.work.city); //P B
+// console.log(p3.work.city); //B P
 
 //NESTED PROPERTIES ARE ALWAYS SHALLOW COPIED
 
@@ -51,3 +51,8 @@ console.log(p3.work.city); //B P
 
 
 //ASSIGNMENT: StructuredClone, JSON.stringify(JSON.parse())
+
+
+
+
+
