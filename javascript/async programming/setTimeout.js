@@ -18,9 +18,22 @@
 // console.log("Namaste");
 
 // console.log("Hello");
-// setTimeout(() => console.log("Vanakkam"), 500);
+// setTimeout(() => consol.log("Vanakkam"), 500);
 // console.log("Bonjour");
 // setTimeout(() => console.log("Namaste ri"), 499);
+// console.log("ek aur line");
+
+// console.log("Hello");
+// console.log("Vanakkam");
+// console.log("Namaste");
+
+// async programming: to break the normal flow of programming
+// can be done in two ways: using callbacks, using promises...
+
+// is javascript a single-threaded language?
+// if JS is single thread, how does is support/execute async programming?
+
+// document.write("Hello World");
 
 
 
