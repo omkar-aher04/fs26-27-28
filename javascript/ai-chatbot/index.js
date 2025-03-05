@@ -4,11 +4,11 @@ import { OpenAI } from "openai";
 
 const PORT = 4000;
 const ANT_API_KEY =
-  "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";
+  "";
 
 const openai = new OpenAI({
   apiKey:
-    "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", // Replace with your OpenAI API Key
+    "", // Replace with your OpenAI API Key
 });
 
 const app = express();

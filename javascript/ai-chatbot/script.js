@@ -3,7 +3,7 @@ const input = document.querySelector("input");
 const select = document.createElement("select");
 const chatMessages = document.querySelector("#chat-messages");
 const ANT_API_KEY =
-  "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";
+  "";
 
 createAIAgents();
 
