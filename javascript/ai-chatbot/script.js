@@ -2,8 +2,8 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 const select = document.createElement("select");
 const chatMessages = document.querySelector("#chat-messages");
-const ANT_API_KEY =
-  "";
+// const ANT_API_KEY =
+//   "";
 
 createAIAgents();
 

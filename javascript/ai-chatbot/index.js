@@ -3,13 +3,13 @@ import cors from "cors";
 import { OpenAI } from "openai";
 
 const PORT = 4000;
-const ANT_API_KEY =
-  "";
+// const ANT_API_KEY =
+//   "";
 
-const openai = new OpenAI({
-  apiKey:
-    "", // Replace with your OpenAI API Key
-});
+// const openai = new OpenAI({
+//   apiKey:
+//     "", // Replace with your OpenAI API Key
+// });
 
 const app = express();
 app.use(
