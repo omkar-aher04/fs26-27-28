@@ -193,13 +193,13 @@
 
 //IIFE
 
-// for (var i = 0; i <= 3; i++) {
-//   (function (j) {
-//     setTimeout(function () {
-//       console.log(j);
-//     }, 1000);
-//   })(i);
-// }
+for (var i = 0; i <= 3; i++) {
+  (function (j) {
+    setTimeout(function () {
+      console.log(j);
+    }, 1000);
+  })(i);
+}
 
 // for (let i = 0; i <= 3; i++) {
 //   function channu(j) {
