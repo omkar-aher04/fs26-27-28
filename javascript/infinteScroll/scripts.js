@@ -1,4 +1,4 @@
-const apikey = "uay-c1PJzrTZu4DRoZ2AJEtEWXj9BSZ4xfawS2fUhjQ";
+const apikey = "";
 const count = 30; //number of photos to fetch in one call
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apikey}&count=${count}`;
 let images = [];
