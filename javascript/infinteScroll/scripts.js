@@ -1,12 +1,15 @@
 const apikey = "";
-const count = 30; //number of photos to fetch in one call
+const count = 15; //number of photos to fetch in one call
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apikey}&count=${count}`;
 let images = [];
+let loaded = false;
 
 const loader = document.querySelector("#loader");
 const imgContainer = document.querySelector("#img-container");
 
 async function getPhotos() {
+  loaded = false;
+  loader.style.display = "block";
   try {
     const response = await fetch(apiUrl);
     // images.push(...await response.json());
@@ -33,6 +36,14 @@ function displayPhotos(arr) {
     fragment.append(anchor);
   });
   imgContainer.append(fragment);
+  loader.style.display = "none";
+  loaded = true;
 }
+
+window.addEventListener("scroll", () => {
+  window.scrollY + window.innerHeight >= document.body.offsetHeight && loaded
+    ? getPhotos()
+    : "";
+});
 
 getPhotos();
