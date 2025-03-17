@@ -40,10 +40,14 @@ function displayPhotos(arr) {
   loaded = true;
 }
 
+// console.log("window.innerHeight", window.innerHeight); //the viewable height + horizontal scrollbar's height
+// console.log("document.body.offsetHeight", document.body.offsetHeight);
+// console.log("window.scrollY", window.scrollY);
+
 window.addEventListener("scroll", () => {
   window.scrollY + window.innerHeight >= document.body.offsetHeight && loaded
     ? getPhotos()
     : "";
 });
 
-getPhotos();
+getPhotos(); //initial 15 photos
