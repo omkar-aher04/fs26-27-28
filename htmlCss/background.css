@@ -12,12 +12,12 @@ background-position: top left / 0 0
 background-size: cover / contain */
 
 body {
-  /* background-color: blanchedalmond;
+  background-color: blanchedalmond;
   background-image: url("assets/girl eating.avif");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: contain; */
+  background-size: contain;
 
   background: blanchedalmond url("assets/girl eating.avif") no-repeat fixed
     center / cover;
