@@ -1,5 +1,5 @@
 function App() {
-  // return <h1>My first code in react</h1>;
-  return <p>Abhishek</p>;
+  //HMR: Hot Module Replacement
+  return <h1>Welcome to Day 2 of learning react</h1>;
 }
 export default App;
