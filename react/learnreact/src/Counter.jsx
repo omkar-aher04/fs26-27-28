@@ -31,6 +31,7 @@ function Counter() {
 
   function increment() {
     // console.log(typeof setCounter);
+    // setCounter((prev) => prev + 1);
     setCounter(counter + 1);
   }
   function decrement() {

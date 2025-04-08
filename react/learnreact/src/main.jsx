@@ -5,7 +5,9 @@ import "./index.css";
 // import SecondComponent from "./SecondComponent.jsx";
 // import Lists from "./Lists.jsx";
 // import Counter from "./Counter.jsx";
-import Main from "./todoList/Main";
+// import Main from "./todoList/Main";
+import Main from "./leaderBoard/Main.jsx";
+// import States from "./leaderBoard/States.jsx";
 
 createRoot(document.getElementById("root")).render(
   //   <SecondComponent name="Rohit Jain" age={34} skillset={["React", "Node", "Laravel"]} />
@@ -14,6 +16,7 @@ createRoot(document.getElementById("root")).render(
   // <Lists />
   // <Counter />
   <Main />
+  // <States />
 );
 
 //PROPS: arguments to functions(components)
