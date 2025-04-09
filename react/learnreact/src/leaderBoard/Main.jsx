@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 
 function Main() {
   const [fname, setFname] = useState("");
@@ -6,6 +7,14 @@ function Main() {
   const [country, setCountry] = useState("");
   const [score, setScore] = useState("");
   const [data, setData] = useState([]);
+  const [flag, setFlag] = useState(1);
+
+  useEffect(() => {
+    if (data.length > 0) {
+      const copy = [...data];
+      setData(copy.sort((a, b) => b.score - a.score));
+    }
+  }, [score, flag]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,15 +25,12 @@ function Main() {
       score: score,
     };
 
+    setData([...data, obj]);
+
     // setData((prevData) => {
     //   const newData = [...prevData, obj];
     //   return newData.sort((a, b) => b.score - a.score);
     // });
-
-    setData((prevData) => {
-      const newData = [...prevData, obj];
-      return newData.sort((a, b) => b.score - a.score);
-    });
 
     setFname("");
     setLname("");
@@ -33,6 +39,7 @@ function Main() {
   }
 
   function modifyScore(id, sign) {
+    setFlag(flag * -1);
     setData(
       data.map((obj) =>
         obj.id === id

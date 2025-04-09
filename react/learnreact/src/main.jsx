@@ -7,6 +7,7 @@ import "./index.css";
 // import Counter from "./Counter.jsx";
 // import Main from "./todoList/Main";
 import Main from "./leaderBoard/Main.jsx";
+// import Main from "./billSplitter/Main.jsx";
 // import States from "./leaderBoard/States.jsx";
 
 createRoot(document.getElementById("root")).render(
