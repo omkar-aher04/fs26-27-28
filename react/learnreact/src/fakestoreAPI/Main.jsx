@@ -1,4 +1,4 @@
-import axios from "axios";
+import instance from "./axiosConfig.js";
 import { useState, useEffect } from "react";
 import Product from "./Product.jsx";
 import Header from "./components/Header.jsx";
@@ -12,7 +12,8 @@ function Main() {
   }, []);
 
   async function getData() {
-    const result = await axios.get("https://fakestoreapi.in/api/products");
+    const result = await instance.get("/product");
+    const cart = await instance.get("/api/cart/get");
     console.log(result.data.products);
     setProducts(result.data.products);
   }

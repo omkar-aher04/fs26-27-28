@@ -1,9 +1,6 @@
 function trimContent(input, length) {
   return input.length > length
-    ? input
-        .split(" ")
-        .slice(0, length)
-        .join(" ") + "..."
+    ? input.split(" ").slice(0, length).join(" ") + "..."
     : input;
 }
 function Product({ product }) {
