@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function trimContent(input, length) {
   return input.length > length
     ? input.split(" ").slice(0, length).join(" ") + "..."
@@ -6,7 +8,9 @@ function trimContent(input, length) {
 function Product({ product }) {
   return (
     <div className="product w-[23%] h-96 p-2 my-4">
-      <img className="w-full h-1/2" src={product.image} alt={product.title} />
+      <Link to={`/product/${product.id}`}>
+        <img className="w-full h-1/2" src={product.image} alt={product.title} />
+      </Link>
       <div className="h-1/2">
         <h3>{trimContent(product.title, 8)}</h3>
         <p className="font-bold">${product.price}</p>
