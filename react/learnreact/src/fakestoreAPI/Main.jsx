@@ -43,10 +43,51 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Singleproduct />,
       },
-      { path: "*", element: <NotFound /> },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
   },
 ]);
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <First />,
+//     children: [
+//       {
+//         index: true,
+//         element: <Home />,
+//       },
+//       {
+//         path: "/about",
+//         element: <About />,
+//       },
+//       {
+//         path: "/contact",
+//         element: <Contact />,
+//       },
+//       {
+//         path: "/wishlist",
+//         element: <Wishlist />,
+//       },
+//       {
+//         path: "/cart",
+//         element: <Cart />,
+//       },
+//       {
+//         path: "/login",
+//         element: <Login />,
+//       },
+//       {
+//         path: "/product/:id",
+//         element: <Singleproduct />,
+//       },
+//       { path: "*", element: <NotFound /> },
+//     ],
+//   },
+// ]);
 
 function Main() {
   return (
