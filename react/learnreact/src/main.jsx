@@ -11,9 +11,11 @@ import "./index.css";
 // import States from "./leaderBoard/States.jsx";
 // import Main from "./boxesShowHide SOLVED/Main";
 // import Main from "./randomUser/Main";
-import Main from "./fakestoreAPI/Main";
+// import Main from "./fakestoreAPI/Main";
 // import Main from "./weatherApp/Main";
 // import Main from "./usingRef/Main";
+// import Main from "./timer/Main";
+import Main from "./reducers/todo/Main.jsx";
 
 createRoot(document.getElementById("root")).render(
   //   <SecondComponent name="Rohit Jain" age={34} skillset={["React", "Node", "Laravel"]} />
