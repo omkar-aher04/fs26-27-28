@@ -1,13 +1,15 @@
 import { useReducer } from "react";
+import { MdDelete, MdEdit } from "react-icons/md";
+
 // WHEN WE USE REDUCERS, THE FIRST THING INVOKED ON ANY USER ACTION IS THE DISPATCH FUNCTION
 // DISPATCH FUNCTION TAKES IN THE ACTION TYPE AND THE PAYLOAD
 // THE DISPATCH FUNCTION THEN CALLS THE REDUCER FUNCTION WITH THE CURRENT STATE AND THE ACTION
-
 
 const initialState = {
   input: "",
   tasks: [],
   isEditing: false,
+  editId: null,
 };
 function todoReducer(state, action) {
   switch (action.type) {
@@ -18,12 +20,38 @@ function todoReducer(state, action) {
       };
 
     case "ADD_TASK":
-      return { ...state, tasks: [...state.tasks, state.input], input: "" };
+      return state.isEditing
+        ? {
+            ...state,
+            tasks: state.tasks.map((task, indx) =>
+              indx === state.editId ? state.input : task
+            ),
+            //RESETTING
+            isEditing: false,
+            editId: null,
+            input: "",
+          }
+        : { ...state, tasks: [...state.tasks, state.input], input: "" };
+
+    case "DELETE_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.filter((task, indx) => indx !== action.id),
+      };
+    case "EDIT_TASK":
+      return {
+        ...state,
+        isEditing: true,
+        input: action.payload,
+        editId: action.id,
+      };
   }
 }
 
 function Main() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
+
+    
 
   return (
     <>
@@ -47,12 +75,33 @@ function Main() {
           })
         }
       >
-        Add Task
+        {state.isEditing ? "Edit Task" : "Add Task"}
       </button>
 
       <ul>
         {state.tasks.map((task, index) => {
-          return <li key={index}>{task}</li>;
+          return (
+            <li key={index}>
+              {task}
+              <MdDelete
+                onClick={() =>
+                  dispatch({
+                    type: "DELETE_TASK",
+                    id: index,
+                  })
+                }
+              />
+              <MdEdit
+                onClick={() =>
+                  dispatch({
+                    type: "EDIT_TASK",
+                    id: index,
+                    payload: task,
+                  })
+                }
+              />
+            </li>
+          );
         })}
       </ul>
     </>
