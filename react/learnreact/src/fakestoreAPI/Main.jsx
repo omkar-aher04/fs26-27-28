@@ -10,6 +10,9 @@ import NotFound from "./pages/NotFound";
 import Singleproduct from "./pages/Singleproduct";
 import CartProvider from "./contexts/CartContext";
 import Register from "./pages/Register";
+import AuthProvider from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +52,14 @@ const router = createBrowserRouter([
         element: <Singleproduct />,
       },
       {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: "*",
         element: <NotFound />,
       },
@@ -58,9 +69,11 @@ const router = createBrowserRouter([
 
 function Main() {
   return (
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
