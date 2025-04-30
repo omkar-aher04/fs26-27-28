@@ -50,7 +50,7 @@ function Header() {
                 />
               </div>
               {isDropdownOpen && (
-                <ul className="absolute right-0 mt-2 bg-white shadow-md rounded w-40">
+                <ul className="absolute z-50 right-0 mt-2 bg-white shadow-md rounded w-40">
                   <li className="p-2 hover:bg-gray-200">
                     <Link to={user ? "/profile" : "/login"}>
                       {user ? "Profile" : "Login"}
