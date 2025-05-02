@@ -23,7 +23,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 // import store from "./reduxTodo/store.js";
 import store from "./ecommerceRedux/store.js";
-import Home from "./ecommerceRedux/Home";
+import Main from "./ecommerceRedux/Main";
 
 createRoot(document.getElementById("root")).render(
   //   <SecondComponent name="Rohit Jain" age={34} skillset={["React", "Node", "Laravel"]} />
@@ -32,7 +32,7 @@ createRoot(document.getElementById("root")).render(
   // <Lists />
   // <Counter />
   <Provider store={store}>
-    <Home />
+    <Main />
   </Provider>
   // <States />
 );
