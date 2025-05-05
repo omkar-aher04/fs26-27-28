@@ -1,13 +1,22 @@
 import { useEffect } from "react";
-import { fetchSingleProduct } from "../productSlice";
+import { fetchSingleProduct } from "../slices/productSlice";
+import Loader from "../components/Loader";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function SingleProduct() {
   const dispatch = useDispatch();
-  const initState = useSelector((state) => {
-    return state.ecommerce;
-  });
+  const navigate = useNavigate();
+
+  const initState = useSelector((state) => state.ecommerce);
+
+  const authState = useSelector((state) => state.auth);
+
+  function handleAddToCart() {
+    if (!authState.isLoggedIn) {
+      navigate(`/login/?referer=${window.location.pathname}`);
+    }
+  }
 
   const { id } = useParams();
 
@@ -15,7 +24,7 @@ function SingleProduct() {
     if (id) dispatch(fetchSingleProduct(id));
   }, [id]);
 
-  if (initState.loading) return <h1>LOADING...</h1>;
+  if (initState.loading) return <Loader />;
 
   return (
     <div className="single-product-container flex flex-wrap md:flex-nowrap justify-center items-start min-h-screen bg-gray-100 p-6">
@@ -26,7 +35,7 @@ function SingleProduct() {
           alt={initState.singleProduct.title}
         />
       </div>
-      
+
       <div className="product-details w-full md:w-1/2 p-6">
         <h1 className="text-3xl font-bold mb-4">
           {initState.singleProduct.title}
@@ -53,7 +62,10 @@ function SingleProduct() {
         </p>
 
         <div className="buttons flex gap-4">
-          <button className="px-4 py-2 border-2 border-green-400 bg-green-400 text-white rounded-2xl hover:bg-green-500">
+          <button
+            onClick={handleAddToCart}
+            className="px-4 py-2 border-2 border-green-400 bg-green-400 text-white rounded-2xl hover:bg-green-500"
+          >
             Add to Cart
           </button>
           <button className="px-4 py-2 border-2 border-pink-400 bg-pink-400 text-white rounded-2xl hover:bg-pink-500">

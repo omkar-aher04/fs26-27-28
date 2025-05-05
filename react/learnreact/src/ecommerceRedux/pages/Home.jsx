@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../productSlice";
+import { fetchProducts } from "../slices/productSlice";
+import Loader from "../components/Loader";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -19,7 +20,7 @@ function Home() {
     dispatch(fetchProducts());
   }, []);
 
-  if (initState.loading) return <h1>LOADING...</h1>;
+  if (initState.loading) return <Loader />;
 
   return (
     <>

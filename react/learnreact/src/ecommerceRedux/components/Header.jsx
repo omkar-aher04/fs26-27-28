@@ -1,6 +1,13 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { MdLogout, MdOutlineShoppingCart } from "react-icons/md";
+import { handleLogout } from "../slices/authSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+  const authState = useSelector((state) => state.auth);
+  console.log(authState);
+
   return (
     <header className="bg-rose-400 h-14 px-12 flex justify-between items-center">
       <h1 className="font-bold text-3xl">
@@ -62,9 +69,18 @@ function Header() {
             )}
           </li>
         ) : ( */}
-        <li className="mr-5 cursor-pointer">
-          <Link to="/login">Login</Link>
-        </li>
+        {authState.user ? (
+          <li className="mr-5 cursor-pointer">
+            Logout{" "}
+            <button onClick={() => dispatch(handleLogout())}>
+              <MdLogout title="Logout" className="" />
+            </button>
+          </li>
+        ) : (
+          <li className="mr-5 cursor-pointer">
+            <Link to="/login">Login</Link>
+          </li>
+        )}
         {/* )} */}
       </ul>
     </header>
