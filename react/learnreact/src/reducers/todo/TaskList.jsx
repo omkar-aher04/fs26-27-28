@@ -1,0 +1,65 @@
+import { MdDelete, MdEdit } from "react-icons/md";
+
+function TaskList({ state, dispatch }) {
+  return (
+    <ul className="my-4 space-y-2">
+      {state.tasks.map((task) => {
+        return (
+          <li
+            key={task.id}
+            className={`flex justify-between items-center bg-gray-100 p-2 rounded shadow-md ${
+              task.completed ? "opacity-50" : ""
+            }`}
+          >
+            <div className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                checked={task.completed}
+                onChange={() =>
+                  dispatch({
+                    type: "TOGGLE_COMPLETE",
+                    id: task.id,
+                  })
+                }
+                className="cursor-pointer"
+              />
+              <span
+                className={`text-gray-800 font-medium ${
+                  task.completed ? "line-through" : ""
+                }`}
+              >
+                {task.text}
+              </span>
+            </div>
+            <div className="flex space-x-2">
+              <MdDelete
+                className={`text-red-500 cursor-pointer hover:text-red-700 ${
+                  task.completed ? "pointer-events-none" : ""
+                }`}
+                onClick={() =>
+                  dispatch({
+                    type: "DELETE_TASK",
+                    id: task.id,
+                  })
+                }
+              />
+              <MdEdit
+                className={`text-blue-500 cursor-pointer hover:text-blue-700 ${
+                  task.completed ? "pointer-events-none" : ""
+                }`}
+                onClick={() =>
+                  dispatch({
+                    type: "EDIT_TASK",
+                    payload: task,
+                  })
+                }
+              />
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+export default TaskList;

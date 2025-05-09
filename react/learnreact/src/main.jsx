@@ -17,15 +17,15 @@ import "./index.css";
 // import Main from "./weatherApp/Main";
 // import Main from "./usingRef/Main";
 // import Main from "./timer/Main";
-// import Main from "./reducers/todo/Main.jsx";
+import Main from "./reducers/todo/Main.jsx";
 // import Main from "./trello-clone/Main.jsx";
 // import UsingUseMemo from "./memoization/UsingUseMemo";
 // import Main from "./reduxTodo/Main.jsx";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 // import store from "./reduxTodo/store.js";
 // import store from "./ecommerceRedux/store.js";
-import store from "./movieRedux/store.js";
-import Main from "./movieRedux/Main";
+// import store from "./movieRedux/store.js";
+// import Main from "./movieRedux/Main";
 // import Main from "./ecommerceRedux/Main";
 
 createRoot(document.getElementById("root")).render(
@@ -34,9 +34,9 @@ createRoot(document.getElementById("root")).render(
   //   <SecondComponent age="34" />
   // <Lists />
   // <Counter />
-  <Provider store={store}>
-    <Main />
-  </Provider>
+  // <Provider store={store}>
+  <Main />
+  // </Provider>
   // <States />
 );
 

@@ -1,5 +1,6 @@
 import { useReducer } from "react";
-import { MdDelete, MdEdit } from "react-icons/md";
+import Form from "./Form";
+import TaskList from "./TaskList";
 
 // WHEN WE USE REDUCERS, THE FIRST THING INVOKED ON ANY USER ACTION IS THE DISPATCH FUNCTION
 // DISPATCH FUNCTION TAKES IN THE ACTION TYPE AND THE PAYLOAD
@@ -23,88 +24,61 @@ function todoReducer(state, action) {
       return state.isEditing
         ? {
             ...state,
-            tasks: state.tasks.map((task, indx) =>
-              indx === state.editId ? state.input : task
+            tasks: state.tasks.map((task) =>
+              task.id === state.editId ? { ...task, text: state.input } : task
             ),
             //RESETTING
             isEditing: false,
             editId: null,
             input: "",
           }
-        : { ...state, tasks: [...state.tasks, state.input], input: "" };
+        : {
+            ...state,
+            tasks: [
+              ...state.tasks,
+              { id: Date.now(), text: state.input, completed: false },
+            ],
+            input: "",
+          };
 
     case "DELETE_TASK":
       return {
         ...state,
-        tasks: state.tasks.filter((task, indx) => indx !== action.id),
+        tasks: state.tasks.filter((task) => task.id !== action.id),
       };
+
     case "EDIT_TASK":
       return {
         ...state,
         isEditing: true,
-        input: action.payload,
-        editId: action.id,
+        input: action.payload.text,
+        editId: action.payload.id,
       };
+
+    case "TOGGLE_COMPLETE":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.id ? { ...task, completed: !task.completed } : task
+        ),
+      };
+
+    default:
+      return state;
   }
 }
 
 function Main() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
-    
-
   return (
-    <>
-      <input
-        type="text"
-        placeholder="Enter your task"
-        className="border-2 border-blue-200"
-        value={state.input}
-        onChange={(e) =>
-          dispatch({
-            type: "SET_INPUT",
-            payload: e.target.value,
-          })
-        }
-      />
-      <button
-        className="border-2 bg-blue-400 text-white px-4 py-1"
-        onClick={() =>
-          dispatch({
-            type: "ADD_TASK",
-          })
-        }
-      >
-        {state.isEditing ? "Edit Task" : "Add Task"}
-      </button>
-
-      <ul>
-        {state.tasks.map((task, index) => {
-          return (
-            <li key={index}>
-              {task}
-              <MdDelete
-                onClick={() =>
-                  dispatch({
-                    type: "DELETE_TASK",
-                    id: index,
-                  })
-                }
-              />
-              <MdEdit
-                onClick={() =>
-                  dispatch({
-                    type: "EDIT_TASK",
-                    id: index,
-                    payload: task,
-                  })
-                }
-              />
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10">
+      <h1 className="text-3xl font-bold text-blue-600 mb-6">Todo App</h1>
+      <div className="w-full max-w-md bg-white p-6 rounded shadow-md">
+        <Form state={state} dispatch={dispatch} />
+        <TaskList state={state} dispatch={dispatch} />
+      </div>
+    </div>
   );
 }
 
