@@ -1,9 +1,9 @@
 import { MdDelete, MdEdit } from "react-icons/md";
 
-function TaskList({ state, dispatch }) {
+function TaskList({ tasks, onToggleComplete, onDeleteTask, onEditTask }) {
   return (
     <ul className="my-4 space-y-2">
-      {state.tasks.map((task) => {
+      {tasks.map((task) => {
         return (
           <li
             key={task.id}
@@ -15,12 +15,7 @@ function TaskList({ state, dispatch }) {
               <input
                 type="checkbox"
                 checked={task.completed}
-                onChange={() =>
-                  dispatch({
-                    type: "TOGGLE_COMPLETE",
-                    id: task.id,
-                  })
-                }
+                onChange={() => onToggleComplete(task.id)}
                 className="cursor-pointer"
               />
               <span
@@ -36,23 +31,13 @@ function TaskList({ state, dispatch }) {
                 className={`text-red-500 cursor-pointer hover:text-red-700 ${
                   task.completed ? "pointer-events-none" : ""
                 }`}
-                onClick={() =>
-                  dispatch({
-                    type: "DELETE_TASK",
-                    id: task.id,
-                  })
-                }
+                onClick={() => onDeleteTask(task.id)}
               />
               <MdEdit
                 className={`text-blue-500 cursor-pointer hover:text-blue-700 ${
                   task.completed ? "pointer-events-none" : ""
                 }`}
-                onClick={() =>
-                  dispatch({
-                    type: "EDIT_TASK",
-                    payload: task,
-                  })
-                }
+                onClick={() => onEditTask(task)}
               />
             </div>
           </li>

@@ -71,12 +71,35 @@ function todoReducer(state, action) {
 function Main() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
+  function handleAddTask() {
+    dispatch({
+      type: "ADD_TASK",
+    });
+  }
+
+  function handleInputChange(e) {
+    dispatch({
+      type: "SET_INPUT",
+      payload: e.target.value,
+    });
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10">
       <h1 className="text-3xl font-bold text-blue-600 mb-6">Todo App</h1>
       <div className="w-full max-w-md bg-white p-6 rounded shadow-md">
-        <Form state={state} dispatch={dispatch} />
-        <TaskList state={state} dispatch={dispatch} />
+        <Form
+          input={state.input}
+          isEditing={state.isEditing}
+          handleInputChange={handleInputChange}
+          handleAddTask={handleAddTask}
+        />
+        <TaskList
+          tasks={state.tasks}
+          onToggleComplete={(id) => dispatch({ type: "TOGGLE_COMPLETE", id })}
+          onDeleteTask={(id) => dispatch({ type: "DELETE_TASK", id })}
+          onEditTask={(task) => dispatch({ type: "EDIT_TASK", payload: task })}
+        />
       </div>
     </div>
   );
