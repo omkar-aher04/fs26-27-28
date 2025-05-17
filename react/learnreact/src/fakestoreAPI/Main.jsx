@@ -8,6 +8,11 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Singleproduct from "./pages/Singleproduct";
+import CartProvider from "./contexts/CartContext";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+import AuthProvider from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,27 +33,64 @@ const router = createBrowserRouter([
       },
       {
         path: "/wishlist",
-        element: <Wishlist />,
+        element: (
+          <ProtectedRoute>
+            <Wishlist />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/login",
         element: <Login />,
       },
       {
+        path: "/register",
+        element: <Register />,
+      },
+      {
         path: "/product/:id",
         element: <Singleproduct />,
       },
-      { path: "*", element: <NotFound /> },
+      {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
+      },
+      // {
+      //   path: "/my-orders",
+      //   element: (
+      //     <ProtectedRoute>
+      //       <MyOrders />
+      //     </ProtectedRoute>
+      //   ),
+      // },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
   },
 ]);
 
 function Main() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </AuthProvider>
+  );
 }
 
 export default Main;

@@ -14,7 +14,7 @@ function Main() {
   async function getData() {
     setLoading(true);
     const result = await instance.get("/products");
-    console.log(result.data.products);
+    // console.log(result.data.products);
     setProducts(result.data.products);
     setLoading(false);
   }
@@ -45,7 +45,7 @@ function Main() {
   return (
     <>
       
-      <div className="products flex flex-wrap justify-around items-center gap-3 px-12">
+      <div className="products flex flex-wrap justify-around items-center gap-4 px-12 bg-gray-100">
         {products.length > 0 &&
           products.map((product) => {
             return <Product key={product.id} product={product} />;
